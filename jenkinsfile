@@ -9,7 +9,7 @@ pipeline {
         }
          stage('Install jdk') {
             steps {
-               sh 'sudo apt install java-21-openjdk -y'
+               sh 'sudo apt install openjdk-21-jdk -y'
             }
         }
     }
