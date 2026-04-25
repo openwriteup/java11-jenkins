@@ -7,5 +7,10 @@ pipeline {
                sh 'sudo apt  install maven -y'
             }
         }
+         stage('Install jdk') {
+            steps {
+               sh 'sudo apt install java-21-openjdk -y'
+            }
+        }
     }
 }
