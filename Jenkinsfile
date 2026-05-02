@@ -12,6 +12,12 @@ pipeline {
             sh 'docker build -t amitow/testjava -f dockerfile .'
             }
         }
+stage('push') {
+            steps {
+         sh '''echo "dckr_pat_qcO30K2AMANqv5WLuJlnbJLbSrc" |docker login -u amitow --password-stdin
+docker push  amitow/testjava'''
+            }
+        }
 
     }
 }
