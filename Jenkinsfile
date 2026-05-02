@@ -9,7 +9,7 @@ pipeline {
         }
 	  stage('build') {
             steps {
-              sh 'docker build -t amitow/testjava -f dockerfile .'
+              sh 'ssudo docker build -t amitow/testjava -f dockerfile .'
             }
         }
 
