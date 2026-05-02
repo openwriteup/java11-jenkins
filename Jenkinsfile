@@ -14,7 +14,7 @@ pipeline {
         }
 stage('push') {
             steps {
-         sh '''echo "dckr_pat_qcO30K2AMANqv5WLuJlnbJLbSrc" |docker login -u amitow --password-stdin
+         sh '''echo "testtoken" |docker login -u amitow --password-stdin
 docker push  amitow/testjava'''
             }
         }
