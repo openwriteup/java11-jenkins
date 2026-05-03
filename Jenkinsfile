@@ -45,7 +45,8 @@ sudo apt-get install trivy -y'''
             steps {
 				emailext attachmentsPattern: 'report.json', body: 'PFA', subject: 'Hi Trivy report', to: 'amit23comp@gmail.com'
 	mail bcc: '', body: 'echo jobstatus ', cc: '', from: 'openwriteup@gmail.com', replyTo: '', subject: 'Pipeline status', to: 'openwriteup@gmail.com'
-        }
+       slackSend channel: 'jenkinswp', message: 'hi to slack', teamDomain: 'jenkinswp', tokenCredentialId: 'a47de10e-69d4-4e86-9d35-4d77ab3a1580'
+			}
  }
     }
 }
