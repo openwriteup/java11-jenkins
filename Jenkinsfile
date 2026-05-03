@@ -42,6 +42,7 @@ sudo apt-get install trivy -y'''
         }
  stage('mailing') {
             steps {
+				emailext attachmentsPattern: 'report.json', body: 'PFA', subject: 'Hi Trivy report', to: 'amit23comp@gmail.com'
 	mail bcc: '', body: 'echo jobstatus ', cc: '', from: 'openwriteup@gmail.com', replyTo: '', subject: 'Pipeline status', to: 'openwriteup@gmail.com'
         }
  }
