@@ -14,8 +14,11 @@ pipeline {
         }
 stage('push') {
             steps {
-				withCredentials([usernameColonPassword(credentialsId: 'dockerlogin', variable: 'mytoken')]) {
-        sh '''echo $mytoken |docker login -u amitow --password-stdin
+
+				withCredentials([usernamePassword(credentialsId: 'dockerlogin', passwordVariable: 'password', usernameVariable: 'username')])
+				{
+				
+        sh '''echo $password |docker login -u $username --password-stdin
 docker push  amitow/testjava'''
 }
   
