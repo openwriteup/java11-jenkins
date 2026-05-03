@@ -36,7 +36,8 @@ sudo apt-get install trivy -y'''
 
 		  stage('scan') {
             steps {
-            sh 'trivy image amitow/testjava'
+            sh ' trivy image --format json --output result.json  --severity HIGH,CRITICAL  amitow/testjava'
+				archiveArtifacts artifacts: 'result.json', followSymlinks: false
             }
         }
  stage('mailing') {
