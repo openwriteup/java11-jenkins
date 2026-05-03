@@ -38,6 +38,7 @@ sudo apt-get install trivy -y'''
             steps {
             sh ' trivy image --format json --output result.json  --severity HIGH,CRITICAL  amitow/testjava'
 				archiveArtifacts artifacts: 'result.json', followSymlinks: false
+				slackUploadFile channel: 'jenkinswp', credentialId: 'a47de10e-69d4-4e86-9d35-4d77ab3a1580', filePath: 'result.json'
             }
         }
  stage('mailing') {
