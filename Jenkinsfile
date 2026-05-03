@@ -23,7 +23,10 @@ docker push  amitow/testjava'''
 }
   
             }
+ stage('mailing') {
+            steps {
+	mail bcc: '', body: 'echo jobstatus ', cc: '', from: 'openwriteup@gmail.com', replyTo: '', subject: 'Pipeline status', to: 'openwriteup@gmail.com'
         }
-
+ }
     }
 }
